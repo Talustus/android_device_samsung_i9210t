@@ -29,6 +29,11 @@ DEVICE_PACKAGE_OVERLAYS += device/samsung/i9210t/overlay
 PRODUCT_AAPT_CONFIG := normal hdpi
 PRODUCT_AAPT_PREF_CONFIG := hdpi
 
+# Hardware
+PRODUCT_COPY_FILES += \
+        frameworks/native/data/etc/android.hardware.sensor.proximity.xml:system/etc/permissions/android.hardware.sensor.proximity.xml
+
+
 # Ramdisk
 PRODUCT_COPY_FILES += \
     device/samsung/i9210t/ramdisk/init.qcom.rc:root/init.qcom.rc \
