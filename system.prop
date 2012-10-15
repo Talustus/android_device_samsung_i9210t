@@ -78,3 +78,7 @@ persist.radio.add_power_save=1
 # System proverty snapshot disable
 persist.radio.snapshot_disabled=1
 
+# qcom display options
+
+# Fix Screen Flicker?
+debug.mdpcomp.maxlayer=2
