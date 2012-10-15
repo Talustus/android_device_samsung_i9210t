@@ -39,7 +39,7 @@ TARGET_OTA_ASSERT_DEVICE := SGHI727,SGH-I727,hercules,skyrocket,i9210t,celox,GTI
 # Kernel
 TARGET_KERNEL_CONFIG        := cyanogenmod_i9210t_defconfig
 TARGET_KERNEL_SOURCE        := kernel/samsung/msm8660-common
-BOARD_KERNEL_CMDLINE        := androidboot.hardware=qcom msm_watchdog.appsbark=0 msm_watchdog.enable=1 no_console_suspend=true
+BOARD_KERNEL_CMDLINE        := androidboot.hardware=qcom msm_watchdog.appsbark=0 msm_watchdog.enable=1 no_console_suspend=true zcache
 BOARD_KERNEL_BASE           := 0x40400000
 BOARD_KERNEL_PAGESIZE       := 2048
 BOARD_FORCE_RAMDISK_ADDRESS := 0x41800000
