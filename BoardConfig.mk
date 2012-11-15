@@ -25,8 +25,8 @@
 # against the traditional rules of inheritance).
 USE_CAMERA_STUB := true
 
-# inherit from common msm8660
--include device/samsung/msm8660-common/BoardConfigCommon.mk
+# inherit from common celox
+-include device/samsung/celox-common/BoardConfigCommon.mk
 
 # inherit from the proprietary version
 -include vendor/samsung/i9210t/BoardConfigVendor.mk
@@ -39,10 +39,6 @@ TARGET_OTA_ASSERT_DEVICE := SGHI727,SGH-I727,hercules,skyrocket,i9210t,celox,GTI
 # Kernel
 TARGET_KERNEL_CONFIG        := cyanogenmod_i9210t_defconfig
 TARGET_KERNEL_SOURCE        := kernel/samsung/msm8660-common
-BOARD_KERNEL_CMDLINE        := androidboot.hardware=qcom msm_watchdog.appsbark=0 msm_watchdog.enable=1 no_console_suspend=true zcache
-BOARD_KERNEL_BASE           := 0x40400000
-BOARD_KERNEL_PAGESIZE       := 2048
-BOARD_FORCE_RAMDISK_ADDRESS := 0x41800000
 
 # cat /proc/emmc
 #dev:        size     erasesize name
@@ -70,20 +66,3 @@ TW_NO_BATT_PERCENT := false
 TW_DEFAULT_EXTERNAL_STORAGE := false
 TW_FLASH_FROM_STORAGE := true
 TWRP_EVENT_LOGGING := false
-BOARD_HAS_NO_SELECT_BUTTON := true
-
-# Suppress the WIPE command since it can brick our EMMC
-BOARD_SUPPRESS_EMMC_WIPE := true
-
-# Workaround for glitches while cropping bypass layers
-# TODO (orphaned) TARGET_NO_BYPASS_CROPPING := true
-
-# MTP
-# TODO (orphaned) BOARD_MTP_DEVICE := "/dev/mtp_usb"
-
-# Disable initlogo, Samsungs framebuffer is weird
-TARGET_NO_INITLOGO := true
-
-# Preload the boot animation to avoid jerkiness
-TARGET_BOOTANIMATION_PRELOAD := true
-
