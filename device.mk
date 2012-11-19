@@ -26,14 +26,7 @@ PRODUCT_AAPT_PREF_CONFIG := hdpi
 
 # Ramdisk
 PRODUCT_COPY_FILES += \
-    device/samsung/i9210t/ramdisk/init.qcom.rc:root/init.qcom.rc \
-    device/samsung/i9210t/ramdisk/init.qcom.sh:root/init.qcom.sh \
-    device/samsung/i9210t/ramdisk/init.qcom.usb.rc:root/init.qcom.usb.rc \
-    device/samsung/i9210t/ramdisk/init.qcom.usb.sh:root/init.qcom.usb.sh \
-    device/samsung/i9210t/ramdisk/init.target.rc:root/init.target.rc \
-    device/samsung/i9210t/ramdisk/ueventd.rc:root/ueventd.rc \
-    device/samsung/i9210t/ramdisk/init.emmc.rc:root/init.emmc.rc \
-    device/samsung/i9210t/fstab.qcom:root/fstab.qcom
+    device/samsung/i9210t/ramdisk/init.qcom.usb.rc:root/init.qcom.usb.rc
 
 # BT firmware
 PRODUCT_COPY_FILES += \
