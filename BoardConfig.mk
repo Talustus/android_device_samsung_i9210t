@@ -31,10 +31,10 @@ USE_CAMERA_STUB := true
 # inherit from the proprietary version
 -include vendor/samsung/i9210t/BoardConfigVendor.mk
 
-TARGET_BOOTLOADER_BOARD_NAME := skyrocket
+TARGET_BOOTLOADER_BOARD_NAME := msm8660_surf
 
 # Assert
-TARGET_OTA_ASSERT_DEVICE := GT-I9210T,GT-I9210,GTI9210T,GTI9210,i9210t,i9210,celox,SGHI727,SGH-I727,hercules,skyrocket
+TARGET_OTA_ASSERT_DEVICE := GT-I9210T,GT-I9210,i9210t,i9210,cm_i9210t,cm_i9210,hercules,skyrocket
 
 # Kernel
 TARGET_KERNEL_CONFIG        := cyanogenmod_i9210t_defconfig
