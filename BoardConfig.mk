@@ -29,15 +29,15 @@ USE_CAMERA_STUB := true
 -include device/samsung/celox-common/BoardConfigCommon.mk
 
 # inherit from the proprietary version
--include vendor/samsung/skyrocket/BoardConfigVendor.mk
+-include vendor/samsung/i9210t/BoardConfigVendor.mk
 
-TARGET_BOOTLOADER_BOARD_NAME := skyrocket
+TARGET_BOOTLOADER_BOARD_NAME := msm8660_surf
 
 # Assert
-TARGET_OTA_ASSERT_DEVICE := SGH-I727,skyrocket
+TARGET_OTA_ASSERT_DEVICE := GT-I9210T,i9210t
 
 # Kernel
-TARGET_KERNEL_CONFIG        := cyanogenmod_skyrocket_defconfig
+TARGET_KERNEL_CONFIG        := cyanogenmod_i9210t_defconfig
 TARGET_KERNEL_SOURCE        := kernel/samsung/msm8660-common
 
 # cat /proc/emmc
@@ -49,11 +49,11 @@ TARGET_KERNEL_SOURCE        := kernel/samsung/msm8660-common
 #mmcblk0p25: 9ffffe00 00000200 "userdata"
 
 TARGET_USERIMAGES_USE_EXT4 := true
-BOARD_BOOTIMAGE_PARTITION_SIZE := 16777216
-BOARD_RECOVERYIMAGE_PARTITION_SIZE := 16776192
-BOARD_SYSTEMIMAGE_PARTITION_SIZE := 838860800
-BOARD_USERDATAIMAGE_PARTITION_SIZE := 20044333056
+BOARD_BOOTIMAGE_PARTITION_SIZE := 10485760
+BOARD_RECOVERYIMAGE_PARTITION_SIZE := 10485760
+BOARD_SYSTEMIMAGE_PARTITION_SIZE := 694157312
+BOARD_USERDATAIMAGE_PARTITION_SIZE := 2149580800
 BOARD_FLASH_BLOCK_SIZE := 131072
 
-BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := device/samsung/skyrocket/bluetooth
+BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := device/samsung/i9210t/bluetooth
 
