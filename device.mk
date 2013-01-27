@@ -15,20 +15,20 @@
 #
 
 ## (2) Also get non-open-source specific aspects if available
-$(call inherit-product-if-exists, vendor/samsung/skyrocket/skyrocket-vendor.mk)
+$(call inherit-product-if-exists, vendor/samsung/i9210t/i9210t-vendor.mk)
 
 ## overlays
-DEVICE_PACKAGE_OVERLAYS += device/samsung/skyrocket/overlay
+DEVICE_PACKAGE_OVERLAYS += device/samsung/i9210t/overlay
 
 # Ramdisk
 PRODUCT_COPY_FILES += \
-    device/samsung/skyrocket/ramdisk/init.qcom.usb.rc:root/init.qcom.usb.rc \
+    device/samsung/i9210t/ramdisk/init.qcom.usb.rc:root/init.qcom.usb.rc \
 
 # BT firmware
 PRODUCT_COPY_FILES += \
-    device/samsung/skyrocket/firmware/bcm4330B1.hcd:system/etc/firmware/bcm4330B1.hcd
+    device/samsung/i9210t/firmware/bcm4330B1.hcd:system/etc/firmware/bcm4330B1.hcd
 
 # Inherit from celox-common
 $(call inherit-product, device/samsung/celox-common/celox-common.mk)
 
-$(call inherit-product-if-exists, vendor/samsung/skyrocket/skyrocket-vendor.mk)
+$(call inherit-product-if-exists, vendor/samsung/i9210t/i9210t-vendor.mk)
