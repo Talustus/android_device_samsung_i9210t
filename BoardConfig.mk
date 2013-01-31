@@ -34,7 +34,7 @@ USE_CAMERA_STUB := true
 TARGET_BOOTLOADER_BOARD_NAME := msm8660_surf
 
 # Assert
-TARGET_OTA_ASSERT_DEVICE := GT-I9210T,GT-I9210,i9210t,i9210,cm_i9210t,cm_i9210,hercules,skyrocket
+TARGET_OTA_ASSERT_DEVICE := GT-I9210T,i9210t,skyrocket
 
 # Kernel
 TARGET_KERNEL_CONFIG        := cyanogenmod_i9210t_defconfig
@@ -56,9 +56,12 @@ BOARD_USERDATAIMAGE_PARTITION_SIZE := 2149580800
 BOARD_FLASH_BLOCK_SIZE := 131072
 
 #########################
-#### TWRP Recovery	####
+#### TWRP Recovery   ####
 #### Common Options  ####
 #########################
+# Targetv RECOVERY RC
+TARGET_RECOVERY_INITRC := device/samsung/i9210t/recovery/init.rc
+
 # Screen Resulution the device uses
 DEVICE_RESOLUTION := 480x800
 
@@ -98,6 +101,9 @@ TW_EXTERNAL_STORAGE_PATH := "/sdcard"
 # Mountpoint for the external Storage
 TW_EXTERNAL_STORAGE_MOUNT_POINT := "sdcard"
 
+# FUSE_EXFAT support (TWRP 2.4)
+TW_INCLUDE_FUSE_EXFAT := true
+
 # External Storage as default for backups?
 TW_DEFAULT_EXTERNAL_STORAGE := false
 
@@ -112,9 +118,6 @@ TW_ALWAYS_RMRF := false
 
 # enables/disables USB Storage Support
 TW_NO_USB_STORAGE := false
-
-# Use EXT4 Filesystem for backups
-TARGET_USERIMAGES_USE_EXT4 := true
 
 # External SD does not use EXT4 Filesystem (VFAT ...)
 TW_SDEXT_NO_EXT4 := true
@@ -137,14 +140,14 @@ TW_FORCE_CPUINFO_FOR_DEVICE_ID := false
 # enable/disable the display of the battery percentage for devices that don't support it properly
 TW_NO_BATT_PERCENT := false
 
-# if u are going to use a CM7/CM9 tree to compile TWRP set it to false otherwhise to true
-TW_COMPILE_ON_CM10 := true
-
 # Enable ICS Crypto Support
 TW_INCLUDE_CRYPTO := false
 
 # Enable JellyBean Crypto Support, this also enables ICS crypto support !
 TW_INCLUDE_JB_CRYPTO := true
+
+# support for Samsung crypto (TWRP 2.4)
+TW_INCLUDE_CRYPTO_SAMSUNG := true
 
 # enables touch event logging to help debug touchscreen issues
 TWRP_EVENT_LOGGING := false
