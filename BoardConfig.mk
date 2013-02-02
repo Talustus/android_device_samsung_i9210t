@@ -66,7 +66,8 @@ TARGET_RECOVERY_INITRC := device/samsung/i9210t/recovery/init.rc
 DEVICE_RESOLUTION := 480x800
 
 # fixes slanty looking graphics on some devices
-RECOVERY_GRAPHICS_USE_LINELENGTH := true
+# RECOVERY_GRAPHICS_USE_LINELENGTH := true
+TARGET_RECOVERY_PIXEL_FORMAT := "RGBX_8888"
 
 # Custom Source for recovery reboot functions
 # TARGET_RECOVERY_REBOOT_SRC := custom-reboot.c
@@ -90,16 +91,16 @@ TW_HAS_NO_RECOVERY_PARTITION := false
 BOARD_HAS_NO_REAL_SDCARD := false
 
 # Path to the internal Storage
-TW_INTERNAL_STORAGE_PATH := "/emmc"
+TW_INTERNAL_STORAGE_PATH := "/sdcard"
 
 # Mountpoint for the internal Storage
-TW_INTERNAL_STORAGE_MOUNT_POINT := "emmc"
+TW_INTERNAL_STORAGE_MOUNT_POINT := "sdcard"
 
 # Path to the external Storage
-TW_EXTERNAL_STORAGE_PATH := "/sdcard"
+TW_EXTERNAL_STORAGE_PATH := "/external_sdcard"
 
 # Mountpoint for the external Storage
-TW_EXTERNAL_STORAGE_MOUNT_POINT := "sdcard"
+TW_EXTERNAL_STORAGE_MOUNT_POINT := "external_sdcard"
 
 # FUSE_EXFAT support (TWRP 2.4)
 TW_INCLUDE_FUSE_EXFAT := true
@@ -141,13 +142,21 @@ TW_FORCE_CPUINFO_FOR_DEVICE_ID := false
 TW_NO_BATT_PERCENT := false
 
 # Enable ICS Crypto Support
-TW_INCLUDE_CRYPTO := false
+TW_INCLUDE_CRYPTO := true
 
 # Enable JellyBean Crypto Support, this also enables ICS crypto support !
 TW_INCLUDE_JB_CRYPTO := true
 
 # support for Samsung crypto (TWRP 2.4)
 TW_INCLUDE_CRYPTO_SAMSUNG := true
+
+# Crypto related settings
+TW_CRYPTO_FS_TYPE := "ext4"
+TW_CRYPTO_REAL_BLKDEV := "/dev/block/mmcblk0p25"
+TW_CRYPTO_MNT_POINT := "/data"
+TW_CRYPTO_FS_OPTIONS := "noauto_da_alloc"
+TW_CRYPTO_FS_FLAGS := "0x00000006"
+TW_CRYPTO_KEY_LOC := "/efs/metadata"
 
 # enables touch event logging to help debug touchscreen issues
 TWRP_EVENT_LOGGING := false
