@@ -39,6 +39,10 @@ PRODUCT_COPY_FILES += \
     device/samsung/i9210t/ramdisk/ueventd.rc:root/ueventd.rc \
     device/samsung/i9210t/ramdisk/init.emmc.rc:root/init.emmc.rc
 
+# Set default USB interface
+PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
+	persist.sys.usb.config=mass_storage,adb
+
 # BT firmware
 PRODUCT_COPY_FILES += \
     device/samsung/i9210t/firmware/bcm4330B1.hcd:system/etc/firmware/bcm4330B1.hcd
