@@ -52,6 +52,8 @@ BOARD_FORCE_RAMDISK_ADDRESS := 0x41800000
 #mmcblk0p26: 13fffe00 00000200 "cache"
 #mmcblk0p25: 9ffffe00 00000200 "userdata"
 
+TARGET_RECOVERY_INITRC := device/samsung/i9210t/recovery/init.rc
+
 TARGET_USERIMAGES_USE_EXT4 := true
 BOARD_BOOTIMAGE_PARTITION_SIZE := 10485760
 BOARD_RECOVERYIMAGE_PARTITION_SIZE := 10485760
@@ -67,7 +69,7 @@ BOARD_HAS_NO_MISC_PARTITION := true
 BOARD_HAS_NO_SELECT_BUTTON := true
 
 #########################
-#### TWRP Recovery	####
+#### TWRP Recovery   ####
 #### Common Options  ####
 #########################
 # Screen Resulution the device uses
@@ -125,7 +127,7 @@ TW_ALWAYS_RMRF := false
 TW_NO_USB_STORAGE := false
 
 # Use EXT4 Filesystem for backups
-TARGET_USERIMAGES_USE_EXT4 := true
+# TARGET_USERIMAGES_USE_EXT4 := true
 
 # External SD does not use EXT4 Filesystem (VFAT ...)
 TW_SDEXT_NO_EXT4 := true
@@ -148,6 +150,9 @@ TW_FORCE_CPUINFO_FOR_DEVICE_ID := false
 # enable/disable the display of the battery percentage for devices that don't support it properly
 TW_NO_BATT_PERCENT := false
 
+# if u are going to use a CM7/CM9 tree to compile TWRP set it to false otherwhise to true
+TW_COMPILE_ON_CM10 := false
+
 # Enable ICS Crypto Support
 TW_INCLUDE_CRYPTO := true
 
@@ -156,6 +161,21 @@ TW_INCLUDE_JB_CRYPTO := false
 
 # enables touch event logging to help debug touchscreen issues
 TWRP_EVENT_LOGGING := false
+
+# Custom Path to the brigthness sys fs control file
+TW_BRIGHTNESS_PATH := /sys/devices/platform/msm_fb.196609/leds/lcd-backlight/brightness
+
+# Max Brightness Setting
+TW_MAX_BRIGHTNESS := 255
+
+# Custom Battery Path
+# TW_CUSTOM_BATTERY_PATH :=
+
+# Exclude SuperSU install from recovery
+TW_EXCLUDE_SUPERSU := false
+
+# Testing: FB2PNG
+TW_INCLUDE_FB2PNG := true
 
 ######################################
 ## Additional Partitions to backup  ##
