@@ -107,7 +107,7 @@ TW_EXTERNAL_STORAGE_MOUNT_POINT := "sdcard"
 TW_DEFAULT_EXTERNAL_STORAGE := false
 
 # FUSE_EXFAT support (TWRP 2.4)
-TW_INCLUDE_FUSE_EXFAT := true
+TW_NO_EXFAT_FUSE := false
 
 # Always keep system mounted
 TW_NEVER_UNMOUNT_SYSTEM := false
