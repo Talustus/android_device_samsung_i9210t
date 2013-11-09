@@ -61,11 +61,18 @@ BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := device/samsung/i9210t/bluetooth
 #### TWRP Recovery   ####
 #### Common Options  ####
 #########################
-# Targetv RECOVERY RC
-TARGET_RECOVERY_INITRC := device/samsung/i9210t/recovery/init.rc
+# Target RECOVERY RC
+TARGET_RECOVERY_INITRC := device/samsung/i9210t/recovery/root/init.rc
+
+# Target recovery.fstab
+# TARGET_RECOVERY_FSTAB := device/samsung/i9210t/recovery/root/recovery.fstab
 
 # Screen Resulution the device uses
 DEVICE_RESOLUTION := 480x800
+
+# Target Pixel format
+# TARGET_RECOVERY_PIXEL_FORMAT := "BGRA_8888"
+# TARGET_RECOVERY_PIXEL_FORMAT := "RGBX_8888"
 
 # fixes slanty looking graphics on some devices
 RECOVERY_GRAPHICS_USE_LINELENGTH := true
@@ -143,16 +150,34 @@ TW_FORCE_CPUINFO_FOR_DEVICE_ID := false
 TW_NO_BATT_PERCENT := false
 
 # Enable ICS Crypto Support
-TW_INCLUDE_CRYPTO := false
+# TW_INCLUDE_CRYPTO := true
+TW_CRYPTO_FS_TYPE := "ext4"
+TW_CRYPTO_REAL_BLKDEV := "/dev/block/mmcblk0p25"
+TW_CRYPTO_MNT_POINT := "/data"
+TW_CRYPTO_FS_OPTIONS := "noauto_da_alloc"
+TW_CRYPTO_FS_FLAGS := "0x00000006"
+TW_CRYPTO_KEY_LOC := "/efs/metadata"
 
 # Enable JellyBean Crypto Support, this also enables ICS crypto support !
 TW_INCLUDE_JB_CRYPTO := true
 
-# support for Samsung crypto (TWRP 2.4)
+# support for Samsung crypto (TWRP 2.4+)
 TW_INCLUDE_CRYPTO_SAMSUNG := true
 
 # enables touch event logging to help debug touchscreen issues
 TWRP_EVENT_LOGGING := false
+
+# selinux support
+TWHAVE_SELINUX := true
+
+# include FB2PNG into recovery
+TW_INCLUDE_FB2PNG := true
+
+# exclude su (autorooting etc)
+TW_EXCLUDE_SUPERSU := true
+
+# exclude encrypted backups?
+TW_EXCLUDE_ENCRYPTED_BACKUPS := false
 
 ######################################
 ## Additional Partitions to backup  ##
