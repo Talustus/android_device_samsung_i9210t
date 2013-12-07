@@ -1,19 +1,33 @@
 [
   {
+    "project": "CyanogenMod",
     "repository": "android_device_samsung_qcom-common",
     "target_path": "device/samsung/qcom-common"
+    "branch": "cm-10.2"
   },
   {
+    "project": "CyanogenMod",
     "repository": "android_device_samsung_msm8660-common",
     "target_path": "device/samsung/msm8660-common"
+    "branch": "cm-10.2"
   },
   {
+    "project": "CyanogenMod",
     "repository": "android_device_samsung_celox-common",
     "target_path": "device/samsung/celox-common"
+    "branch": "cm-10.2"
   },
   {
+    "project": "CyanogenMod",
     "repository": "android_kernel_samsung_msm8660-common",
     "target_path": "kernel/samsung/msm8660-common"
+    "branch": "cm-10.2"
+  },
+  {
+    "project": "Talustus",
+    "repository": "android_vendor_samsung_i9210t",
+    "target_path": "vendor/samsung/i9210t",
+    "branch": "cm-10.2"
   }
 ]
 

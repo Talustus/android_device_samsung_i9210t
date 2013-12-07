@@ -1,2 +1,2 @@
-add_lunch_combo cm_i9210t-eng
+add_lunch_combo cos_i9210t-eng
 
