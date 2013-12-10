@@ -28,6 +28,10 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
     device/samsung/i9210t/firmware/bcm4330B1.hcd:system/etc/firmware/bcm4330B1.hcd
 
+# S4 Tweaker App
+PRODUCT_COPY_FILES += \
+    device/samsung/i9210t/S4Tweaker.apk:system/app/S4Tweaker.apk
+
 # Inherit from celox-common
 $(call inherit-product, device/samsung/celox-common/celox-common.mk)
 
