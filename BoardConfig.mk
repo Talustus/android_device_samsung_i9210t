@@ -1,4 +1,4 @@
-# Copyright (C) 2012 The CyanogenMod Project
+# Copyright (C) 2014 The CyanogenMod Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -20,41 +20,30 @@
 # definition file).
 #
 
-# WARNING: This line must come *before* including the proprietary
-# variant, so that it gets overwritten by the parent (which goes
-# against the traditional rules of inheritance).
-USE_CAMERA_STUB := true
-
 # inherit from common celox
 -include device/samsung/celox-common/BoardConfigCommon.mk
 
 # inherit from the proprietary version
 -include vendor/samsung/i9210t/BoardConfigVendor.mk
 
-TARGET_BOOTLOADER_BOARD_NAME := MSM8660_SURF
-
 # Assert
+# TARGET_BOARD_INFO_FILE ?= device/samsung/i9210t/board-info.txt
+TARGET_BOOTLOADER_BOARD_NAME := MSM8660_SURF
 TARGET_OTA_ASSERT_DEVICE := GT-I9210T,i9210t
 
 # Kernel
 TARGET_KERNEL_CONFIG        := cyanogenmod_i9210t_defconfig
 TARGET_KERNEL_SOURCE        := kernel/samsung/msm8660-common
 
-# cat /proc/emmc
-#dev:        size     erasesize name
-#mmcblk0p22: 00fffc00 00000200 "recovery"
-#mmcblk0p8: 01000000 00000200 "boot"
-#mmcblk0p24: 5ffffc00 00000200 "system"
-#mmcblk0p26: 13fffe00 00000200 "cache"
-#mmcblk0p25: 9ffffe00 00000200 "userdata"
-
-TARGET_USERIMAGES_USE_EXT4 := true
+# Partitions
+BOARD_FLASH_BLOCK_SIZE := 131072
 BOARD_BOOTIMAGE_PARTITION_SIZE := 10485760
 BOARD_RECOVERYIMAGE_PARTITION_SIZE := 10485760
 BOARD_SYSTEMIMAGE_PARTITION_SIZE := 694157312
 BOARD_USERDATAIMAGE_PARTITION_SIZE := 2149580800
-BOARD_FLASH_BLOCK_SIZE := 131072
+TARGET_USERIMAGES_USE_EXT4 := true
 
+# Bluetooth
 BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := device/samsung/i9210t/bluetooth
 
 #########################

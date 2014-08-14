@@ -20,12 +20,6 @@
 # details, it only fundamentally contains two inherit-product
 # lines, full and maguro, hence its name.
 #
- 
-# Torch
-PRODUCT_PACKAGES := \
-    Torch
-
-BOARD_HAVE_NFC := true
 
 # Inherit from those products. Most specific first.
 $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)

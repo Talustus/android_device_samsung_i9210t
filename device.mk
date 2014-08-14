@@ -1,5 +1,5 @@
 #
-# Copyright (C) 2011 The CyanogenMod Project
+# Copyright (C) 2014 The CyanogenMod Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -14,25 +14,23 @@
 # limitations under the License.
 #
 
-## (2) Also get non-open-source specific aspects if available
+# Get non-open-source specific aspects if available
 $(call inherit-product-if-exists, vendor/samsung/i9210t/i9210t-vendor.mk)
 
-## overlays
-DEVICE_PACKAGE_OVERLAYS += device/samsung/i9210t/overlay
+# Overlays
+DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)overlay
 
 # Ramdisk
 PRODUCT_COPY_FILES += \
-    device/samsung/i9210t/ramdisk/init.qcom.usb.rc:root/init.qcom.usb.rc \
+    $(LOCAL_PATH)/ramdisk/init.qcom.usb.rc:root/init.qcom.usb.rc \
 
 # BT firmware
 PRODUCT_COPY_FILES += \
-    device/samsung/i9210t/firmware/bcm4330B1.hcd:system/etc/firmware/bcm4330B1.hcd
+    $(LOCAL_PATH)/firmware/bcm4330B1.hcd:system/etc/firmware/bcm4330B1.hcd
 
 # S4 Tweaker App
 PRODUCT_COPY_FILES += \
-    device/samsung/i9210t/S4Tweaker.apk:system/app/S4Tweaker.apk
+    $(LOCAL_PATH)/S4Tweaker.apk:system/app/S4Tweaker.apk
 
 # Inherit from celox-common
 $(call inherit-product, device/samsung/celox-common/celox-common.mk)
-
-$(call inherit-product-if-exists, vendor/samsung/i9210t/i9210t-vendor.mk)
