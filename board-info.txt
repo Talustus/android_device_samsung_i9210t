@@ -1,2 +1,2 @@
-require version-baseband=I727:UCMC1|I727R:UXUMA7
+require version-baseband=I9210T:DVLP5
 

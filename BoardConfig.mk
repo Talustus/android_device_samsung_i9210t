@@ -16,14 +16,14 @@
 -include device/samsung/celox-common/BoardConfigCommon.mk
 
 # inherit from the proprietary version
--include vendor/samsung/skyrocket/BoardConfigVendor.mk
+-include vendor/samsung/i9210t/BoardConfigVendor.mk
 
 # Assert
-TARGET_BOARD_INFO_FILE ?= device/samsung/skyrocket/board-info.txt
-TARGET_OTA_ASSERT_DEVICE := SGH-I727,skyrocket
+TARGET_BOARD_INFO_FILE ?= device/samsung/i9210t/board-info.txt
+TARGET_OTA_ASSERT_DEVICE := GT-I9210T,i9210t
 
 # Kernel
-TARGET_KERNEL_CONFIG := cyanogenmod_skyrocket_defconfig
+TARGET_KERNEL_CONFIG := cyanogenmod_i9210t_defconfig
 
 # Partitions
 BOARD_FLASH_BLOCK_SIZE := 131072
@@ -34,4 +34,4 @@ BOARD_USERDATAIMAGE_PARTITION_SIZE := 20044333056
 TARGET_USERIMAGES_USE_EXT4 := true
 
 # Bluetooth
-BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := device/samsung/skyrocket/bluetooth
+BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := device/samsung/i9210t/bluetooth

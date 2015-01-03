@@ -1,5 +1,5 @@
 #
-# system.prop for SGH-I727
+# system.prop for GT-I9210T
 #
 
 rild.libpath=/system/lib/libril-qc-qmi-1.so
