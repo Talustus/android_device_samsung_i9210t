@@ -18,19 +18,20 @@
 $(call inherit-product-if-exists, vendor/samsung/i9210t/i9210t-vendor.mk)
 
 # Overlays
-DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)overlay
+DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay
 
 # Ramdisk
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/ramdisk/init.qcom.usb.rc:root/init.qcom.usb.rc \
+    $(LOCAL_PATH)/ramdisk/init.qcom.usb.rc:root/init.qcom.usb.rc
 
 # BT firmware
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/firmware/bcm4330B1.hcd:system/etc/firmware/bcm4330B1.hcd
 
-# S4 Tweaker App
-PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/S4Tweaker.apk:system/app/S4Tweaker.apk
+# Ramdisk - Ubuntu
+#PRODUCT_COPY_FILES += \
+#    $(LOCAL_PATH)/ramdisk/init.rc:root/init.rc \
+#    $(LOCAL_PATH)/ramdisk/70-i9210t.rules:usr/lib/lxc-android-config/70-i9210t.rules
 
 # Inherit from celox-common
 $(call inherit-product, device/samsung/celox-common/celox-common.mk)

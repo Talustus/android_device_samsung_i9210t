@@ -32,7 +32,7 @@ TARGET_BOOTLOADER_BOARD_NAME := MSM8660_SURF
 TARGET_OTA_ASSERT_DEVICE := GT-I9210T,i9210t
 
 # Kernel
-TARGET_KERNEL_CONFIG        := cyanogenmod_i9210t_defconfig
+TARGET_KERNEL_CONFIG        := ubuntu_i9210t_defconfig
 TARGET_KERNEL_SOURCE        := kernel/samsung/msm8660-common
 
 # Partitions
